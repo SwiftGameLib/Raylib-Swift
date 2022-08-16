@@ -123,6 +123,9 @@ import _RaylibC
 // VR Stereo rendering configuration for simulator
 @_exported import struct _RaylibC.VrStereoConfig
 
+// File path list
+@_exported import struct _RaylibC.FilePathList
+
 #if canImport(Foundation)
 @_exported import struct Foundation.URL
 @_exported import class Foundation.Bundle
@@ -134,3 +137,15 @@ public struct Raylib {
         return RAYLIB_VERSION
     }
 }
+
+// MARK: - Physac
+
+@_exported import struct _RaylibC.PhysicsVertexData
+@_exported import struct _RaylibC.PhysicsShape
+@_exported import struct _RaylibC.PhysicsBodyData
+@_exported import struct _RaylibC.PhysicsManifoldData
+
+public struct Physac {
+    
+}
+

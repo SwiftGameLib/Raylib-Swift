@@ -24,6 +24,7 @@ var cSettings: [CSetting] {
     
     
     array.append(.headerSearchPath("UnmodifiedRaylibSrc/external/glfw/include"))
+    array.append(.headerSearchPath("UnmodifiedRaylibSrc/extras/physac"))
     array.append(.headerSearchPath("UnmodifiedRaylibSrc"))
     
     return array
@@ -39,6 +40,14 @@ var sources: [String] {
     // GLFW Common
     let glfw = ["context.c", "init.c", "input.c", "monitor.c", "vulkan.c", "window.c"]
     array.append(contentsOf: glfw.map({"UnmodifiedRaylibSrc/external/glfw/src/" + $0}))
+    
+    // Physac
+    let physac = ["physac.c"]
+    array.append(contentsOf: physac.map({"UnmodifiedRaylibSrc/extras/physac/" + $0}))
+    
+    // RRES Externals
+    let rres = ["aes.c", "lz4.c", "monocypher.c"] 
+    array.append(contentsOf: rres.map({"UnmodifiedRaylibSrc/extras/rres/external/" + $0}))
     
 #if os(macOS)
     let mac = ["cocoa_init.m", "cocoa_joystick.m", "cocoa_monitor.m", "cocoa_window.m", "cocoa_time.c", "posix_thread.c", "nsgl_context.m", "egl_context.c", "osmesa_context.c"]
